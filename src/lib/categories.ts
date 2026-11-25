@@ -1,6 +1,20 @@
 import {
-  Bandage, CalendarHeart, Droplet, Dumbbell, Flame, Flower2, Hand, Heart,
-  HeartPulse, Milk, Pill, ShieldPlus, Smile, Sun, Wind, type LucideIcon,
+  Bandage,
+  CalendarHeart,
+  Droplet,
+  Dumbbell,
+  Flame,
+  Flower2,
+  Hand,
+  Heart,
+  HeartPulse,
+  Milk,
+  Pill,
+  ShieldPlus,
+  Smile,
+  Sun,
+  Wind,
+  type LucideIcon,
 } from "lucide-react";
 
 export type Category = { slug: string; name: string; icon: LucideIcon };
@@ -8,7 +22,11 @@ export type Category = { slug: string; name: string; icon: LucideIcon };
 const make = (name: string, icon: LucideIcon): Category => ({
   name,
   icon,
-  slug: name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+  slug: name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-"),
 });
 
 // Fixed order and names required by the store owner — do not reorder or rename.
